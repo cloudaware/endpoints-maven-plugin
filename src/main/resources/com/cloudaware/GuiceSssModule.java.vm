@@ -1,0 +1,18 @@
+package ${outputPackageName};
+
+import com.google.api.server.spi.ServletInitializationParameters;
+import com.google.api.server.spi.guice.EndpointsModule;
+
+public class ${outputSimpleClassName} extends EndpointsModule {
+
+    @Override
+    protected void configureServlets() {
+        super.configureServlets();
+        final ServletInitializationParameters.Builder builder = ServletInitializationParameters.builder();
+#foreach($api in $apis)
+        builder.addServiceClass(${api}.class);
+#end
+        builder.setClientIdWhitelistEnabled(${clientIdWhitelistEnabled});
+        this.configureEndpoints("${urlPattern}", builder.build());
+    }
+}
