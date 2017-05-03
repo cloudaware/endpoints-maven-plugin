@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cloudaware</groupId>
     <artifactId>endpoints-maven-plugin</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>maven-plugin</packaging>
     <name>endpoints-maven-plugin</name>
 
@@ -27,24 +27,9 @@
             <version>2.2.1</version>
         </dependency>
         <dependency>
-            <groupId>com.google.http-client</groupId>
-            <artifactId>google-http-client</artifactId>
-            <version>${google-api-client.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.google.endpoints</groupId>
             <artifactId>endpoints-framework-tools</artifactId>
             <version>${endpoints-framework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.endpoints</groupId>
-            <artifactId>endpoints-framework</artifactId>
-            <version>${endpoints-framework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-api-1.0-sdk</artifactId>
-            <version>${appengine-sdk.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.velocity</groupId>

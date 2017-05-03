@@ -13,6 +13,7 @@ This plugin has 2 goals:
             <plugin>
                 <groupId>com.cloudaware</groupId>
                 <artifactId>endpoints-maven-plugin</artifactId>
+                <version>1.0.1</version>
                 <configuration>
                     <apis>
                         <param>com.company.project.SomeApi</param>
@@ -49,4 +50,5 @@ This plugin has 2 goals:
 
 # Changelog
 
+* 1.0.1 - Less dependencies
 * 1.0.0 - Initial release
