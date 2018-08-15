@@ -50,5 +50,6 @@ This plugin has 2 goals:
 
 # Changelog
 
+* 1.0.2 - Change version 
 * 1.0.1 - Less dependencies
 * 1.0.0 - Initial release
