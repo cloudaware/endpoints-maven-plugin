@@ -50,7 +50,7 @@ public final class GuiceEndpointsMojo extends AbstractMojo {
             final String outputDirectory = project.getBuild().getDirectory() + "/generated-sources/api-guice";
             final String outputPackageName = outputClassName.substring(0, outputClassName.lastIndexOf("."));
             final String outputSimpleClassName = outputClassName.substring(outputClassName.lastIndexOf(".") + 1);
-            final File outputPackageDir = new File(outputDirectory, outputPackageName.replaceAll("\\.", File.separator));
+            final File outputPackageDir = new File(outputDirectory, outputPackageName);
             if (!outputPackageDir.exists()) {
                 outputPackageDir.mkdirs();
             }
