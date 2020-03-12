@@ -47,6 +47,12 @@ public final class EndpointsMojo extends AbstractMojo {
      * @parameter
      * @required
      */
+    private String basePath;
+
+    /**
+     * @parameter
+     * @required
+     */
     private List<String> apis;
 
     public void execute() throws MojoExecutionException {
@@ -58,6 +64,7 @@ public final class EndpointsMojo extends AbstractMojo {
             args.add("--hostname=" + hostname);
             args.add("--war=" + warPath);
             args.add("--output=" + outputSwaggerDoc);
+            args.add("--path=" + basePath);
             args.addAll(apis);
             args.add("com.google.api.server.spi.discovery.ProxyingDiscoveryService");
             endpointsTool.execute(args.toArray(new String[args.size()]));
@@ -83,6 +90,7 @@ public final class EndpointsMojo extends AbstractMojo {
             args.add("get-discovery-doc");
             args.add("--hostname=" + hostname);
             args.add("--war=" + warPath);
+            args.add("--path=" + basePath);
             args.add("--output=" + outputDiscoveryDocs);
             args.addAll(apis);
             endpointsTool.execute(args.toArray(new String[args.size()]));

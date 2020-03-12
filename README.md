@@ -15,6 +15,8 @@ This plugin has 2 goals:
                 <artifactId>endpoints-maven-plugin</artifactId>
                 <version>1.0.1</version>
                 <configuration>
+                    <urlPattern>/_ah/api/*</urlPattern>
+                    <basePath>/_ah/api</basePath>
                     <apis>
                         <param>com.company.project.SomeApi</param>
                         <param>com.company.project.OtherApi</param>
@@ -50,6 +52,7 @@ This plugin has 2 goals:
 
 # Changelog
 
+* 1.0.5 - Added required parameter for basePath (to use in conjunction with urlPattern) 
 * 1.0.2 - Change version 
 * 1.0.1 - Less dependencies
 * 1.0.0 - Initial release
