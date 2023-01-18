@@ -1,58 +1,39 @@
 package com.cloudaware;
 
 import com.google.api.server.spi.tools.EndpointsTool;
-import edu.emory.mathcs.backport.java.util.Collections;
 import org.apache.commons.io.IOUtils;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-/**
- * @goal package
- * @phase package
- */
+@Mojo(name = "package", defaultPhase = LifecyclePhase.PACKAGE, threadSafe = true)
 public final class EndpointsMojo extends AbstractMojo {
 
-    /**
-     * @parameter
-     * @required
-     */
+    @Parameter(required = true)
     private File outputSwaggerDoc;
 
-    /**
-     * @parameter
-     * @required
-     */
+    @Parameter(required = true)
     private File outputDiscoveryDocs;
 
-    /**
-     * @parameter
-     * @required
-     */
     private String hostname;
 
-    /**
-     * @parameter
-     * @required
-     */
+    @Parameter(required = true)
     private String warPath;
 
-    /**
-     * @parameter
-     * @required
-     */
+    @Parameter(required = true)
     private String basePath;
 
-    /**
-     * @parameter
-     * @required
-     */
+    @Parameter(required = true)
     private List<String> apis;
 
     public void execute() throws MojoExecutionException {
