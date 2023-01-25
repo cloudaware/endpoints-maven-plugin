@@ -15,6 +15,8 @@ import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Mojo(name = "generate-sources", defaultPhase = LifecyclePhase.GENERATE_SOURCES, threadSafe = true)
@@ -40,8 +42,9 @@ public final class GuiceEndpointsMojo extends AbstractMojo {
         try {
             final String outputDirectory = project.getBuild().getDirectory() + "/generated-sources/api-guice";
             final String outputPackageName = outputClassName.substring(0, outputClassName.lastIndexOf("."));
+            final Path outputPackagePath = Paths.get("", outputPackageName.split("\\."));
             final String outputSimpleClassName = outputClassName.substring(outputClassName.lastIndexOf(".") + 1);
-            final File outputPackageDir = new File(outputDirectory, outputPackageName.replaceAll("\\.", File.separator));
+            final File outputPackageDir = Paths.get(outputDirectory).resolve(outputPackagePath).toFile();
             if (!outputPackageDir.exists()) {
                 outputPackageDir.mkdirs();
             }
