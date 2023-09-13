@@ -52,6 +52,7 @@ This plugin has 2 goals:
 
 # Changelog
 
+* 1.0.8 - Migrate to Jakarta EE, Cloudaware endpoints framework dependency, hostname parameter fix
 * 1.0.7 - Windows fix
 * 1.0.6 - Bump versions, skip overwrite generated file, if content equals
 * 1.0.5 - Added required parameter for basePath (to use in conjunction with urlPattern) 

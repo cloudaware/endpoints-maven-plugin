@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cloudaware</groupId>
     <artifactId>endpoints-maven-plugin</artifactId>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
     <packaging>maven-plugin</packaging>
     <name>endpoints-maven-plugin</name>
 
     <properties>
         <appengine-sdk.version>1.9.51</appengine-sdk.version>
-        <endpoints-framework.version>2.0.7</endpoints-framework.version>
+        <endpoints-framework.version>2.2.2-CA.4</endpoints-framework.version>
         <google-api-client.version>1.23.0</google-api-client.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -52,6 +52,16 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>5.0.0</version>
         </dependency>
     </dependencies>
     <build>

@@ -25,6 +25,7 @@ public final class EndpointsMojo extends AbstractMojo {
     @Parameter(required = true)
     private File outputDiscoveryDocs;
 
+    @Parameter
     private String hostname;
 
     @Parameter(required = true)
